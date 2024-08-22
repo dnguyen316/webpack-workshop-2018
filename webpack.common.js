@@ -5,6 +5,21 @@ module.exports = {
   entry: {
     app: "./src/index.js",
   },
+  module: {
+    rules: [
+      {
+        test: /\.jpe?g$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 5000,
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Production",

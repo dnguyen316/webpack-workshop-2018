@@ -1,3 +1,4 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const { merge } = require("webpack-merge");
@@ -13,8 +14,5 @@ module.exports = merge(common, {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
-  },
-  output: {
-    filename: "[chunkhash].js",
   },
 });
